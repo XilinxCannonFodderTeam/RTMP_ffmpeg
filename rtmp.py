@@ -1,5 +1,7 @@
 import subprocess as sp
 import cv2 as cv
+
+# 请更改目标地址
 rtmpUrl = "rtmp://localhost:1935/videotest/test"
 # camera_path = ""
 cap = cv.VideoCapture(0)
