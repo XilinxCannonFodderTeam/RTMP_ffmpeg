@@ -6,7 +6,7 @@
 
 ### 修改rtmp.py文件
 
-将localhost改为你的服务器地址，然后将```port```改为你配置的端口
+将```localhost```改为你的服务器地址，然后将```port```改为你配置的端口
 
 ```python
 rtmpUrl = "rtmp://localhost:port/videotest/test"
@@ -22,7 +22,7 @@ rtmpUrl = "rtmp://localhost:port/videotest/test"
 cap = cv.VideoCapture(0)
 ```
 
-中的0改为1或2
+中的```0```改为```1```或```2```
 
 ```python
 cap = cv.VideoCapture(1)
@@ -41,3 +41,5 @@ python rtmp.py
 ## 配置服务器
 
 请参见Nginx相关文档
+
+> 端口配置文件为```nginx.conf```, 请酌情修改
