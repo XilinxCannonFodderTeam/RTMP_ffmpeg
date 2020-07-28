@@ -1,5 +1,6 @@
 import subprocess as sp
 import cv2 as cv
+import time
 
 # 请更改目标地址
 rtmpUrl = "rtmp://localhost:1935/videotest/test"
@@ -42,3 +43,4 @@ while(cap.isOpened()):
 
     # write to pipe
     p.stdin.write(frame.tostring())
+    time.sleep(0,1)
