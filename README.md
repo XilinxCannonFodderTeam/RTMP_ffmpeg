@@ -14,6 +14,8 @@ rtmpUrl = "rtmp://localhost:port/videotest/test"
 
 ### 修改摄像头参数
 
+> 注意：受限于openCV自身，部分摄像头可能无法在Linux上成功被调用
+
 如果你想要调用自带摄像头，则不用更改。
 
 如果你想要调用其他摄像头，请把
@@ -30,6 +32,14 @@ cap = cv.VideoCapture(1)
 cap = cv.VideoCapture(2)
 ```
 
+如果你不能确定自己的摄像头参数，可以输入
+
+```bash
+ls /dev/vi*
+```
+
+这时你会得到相关摄像头信息，通过这个可以判断你的摄像头索引
+
 ### 运行
 
 ```bash
@@ -43,3 +53,9 @@ python rtmp.py
 请参见Nginx相关文档
 
 > 端口配置文件为```nginx.conf```, 请酌情修改
+
+## 测试
+
+```bash
+sudo ffmpeg -re -i test.mp4 -vcodec copy -acodec copy -b:v 800k -b:a 32k -f flv rtmp://localhost:port/videotest/test
+```
